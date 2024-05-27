@@ -14,6 +14,7 @@ class WeatherApiModel:ObservableObject {
     public static let shared = WeatherApiModel()
     @Published var weatherInfo: WeatherInfo?
     
+    
     public func fetch(params:WeatherParametersModel,completion:@escaping(WeatherInfo) -> Void){
         
         AF.request(apiUrl,method: .get,parameters:params)
